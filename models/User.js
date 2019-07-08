@@ -13,9 +13,7 @@ const userSchema = new Schema(
       type: Array
     },
     phoneNumer: Number,
-    animal: {
-      enum: ["cat", "dog", "other"]
-    },
+
     password: String
   },
   {
