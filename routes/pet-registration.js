@@ -20,17 +20,17 @@ router.post("/", (req, res, next) => {
   if (!req.isAuthenticated()) return res.redirect("/login");
 
   const { animal, petname, sex, neutered, chipId } = req.body;
-  Pet.create({ animal, petname, sex, neutered, chipId })
-    .then(pet => {
-      return User.findByIdAndUpdate(req.user._id, {
-        $push: { pets: pet._id }
-      }).then(() => {
-        res.redirect("/");
-      });
+  Pet.create({ animal, petname, sex, neutered, chipId }).then(pet => {
+    return User.findByIdAndUpdate(req.user._id, {
+      $push: { pets: pet._id }
     })
-    .catch(err => {
-      res.render("error", { message: "Something went wrong" });
-    });
+      .then(() => {
+        res.redirect("/map");
+      })
+      .catch(err => {
+        res.render("error", { message: "Something went wrong" });
+      });
+  });
 });
 
 module.exports = router;

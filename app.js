@@ -90,4 +90,7 @@ app.use("/auth", authRoutes);
 const profile = require("./routes/pet-registration");
 app.use("/pet-registration", profile);
 
+const map = require("./routes/map");
+app.use("/map", map);
+
 module.exports = app;
