@@ -6,14 +6,16 @@ const userSchema = new Schema(
     firstName: String,
     lastName: String,
     email: {
-      type: String,
-      required: true
+      type: String
+      //  required: true
+    },
+    pets: {
+      type: Array
     },
     phoneNumer: Number,
     animal: {
       enum: ["cat", "dog", "other"]
     },
-    username: String,
     password: String
   },
   {
