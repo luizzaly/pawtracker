@@ -1,0 +1,57 @@
+.signup-container {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  width: 70%;
+}
+
+.signup-container h2 {
+  font-family: "Days One", sans-serif;
+  margin: 0 auto;
+  margin-bottom: 20px;
+}
+
+input {
+  border: none;
+  border-bottom: 1px solid grey;
+  margin-bottom: 30px;
+  padding-bottom: 10px;
+  font-size: 16px !important;
+}
+
+input::placeholder {
+  color: #484848;
+  font-size: 16px;
+  font-weight: 400;
+  padding-bottom: 20px;
+}
+input:focus {
+  outline: none !important;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  -webkit-text-fill-color: #484848;
+  -webkit-box-shadow: 0 0 0px 1000px #e3fbe9 inset;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+button {
+  width: 40%;
+  margin: 0 auto;
+  padding: 8px;
+  border-radius: 100px;
+  background-color: #03554b;
+  border: none;
+  color: white;
+}
+button:focus {
+  outline: none;
+}
