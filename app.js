@@ -13,6 +13,10 @@ const session = require("express-session");
 const MongoStore = require("connect-mongo")(session);
 const flash = require("connect-flash");
 
+mongoose.set("useNewUrlParser", true);
+mongoose.set("useFindAndModify", false);
+mongoose.set("useCreateIndex", true);
+
 mongoose
   .connect("mongodb://localhost/pawtracker", { useNewUrlParser: true })
   .then(x => {

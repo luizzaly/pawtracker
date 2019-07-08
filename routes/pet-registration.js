@@ -2,6 +2,7 @@ const express = require("express");
 const router = express.Router();
 const passport = require("passport");
 const Pet = require("../models/Pet");
+const User = require("../models/User");
 
 /*
 router.get("/", passport.authenticate("local", {
@@ -16,25 +17,19 @@ router.get("/", (req, res, next) => {
 });
 
 router.post("/", (req, res, next) => {
+  if (!req.isAuthenticated()) return res.redirect("/login");
+
   const { animal, petname, sex, neutered, chipId } = req.body;
-
-  console.log(req.user);
-
-  const newPet = new Pet({
-    animal,
-    petname,
-    sex,
-    neutered,
-    chipId
-  });
-  newPet
-    .save()
-    .then(model => {
-      console.log("----model", model);
-      res.redirect("/");
+  Pet.create({ animal, petname, sex, neutered, chipId })
+    .then(pet => {
+      return User.findByIdAndUpdate(req.user._id, {
+        $push: { pets: pet._id }
+      }).then(() => {
+        res.redirect("/");
+      });
     })
     .catch(err => {
-      res.render("/", { message: "Something went wrong" });
+      res.render("error", { message: "Something went wrong" });
     });
 });
 
