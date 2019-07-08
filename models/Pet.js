@@ -1,13 +1,19 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
-const pet = new Schema({
-  name: String,
+const petSchema = new Schema({
+  animal: {
+    enum: ["cat", "dog", "other"],
+    type: String
+  },
+  petname: String,
   sex: {
-    enum: ["male", "female"]
+    enum: ["male", "female"],
+    type: String
   },
   neutered: {
-    enum: ["yes", "no"]
+    enum: ["yes", "no"],
+    type: String
   },
   chipId: Number
 });

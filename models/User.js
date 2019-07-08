@@ -9,13 +9,9 @@ const userSchema = new Schema(
       type: String
       //  required: true
     },
-    pets: {
-      type: Array
-    },
+    pets: [{ type: Schema.Types.ObjectId, ref: "Pet" }],
     phoneNumer: Number,
-    animal: {
-      enum: ["cat", "dog", "other"]
-    },
+
     password: String
   },
   {
