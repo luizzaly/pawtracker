@@ -1,11 +1,12 @@
 @import "form.css";
+
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  padding: 0px;
+  font: 16px "Lato", sans-serif;
 }
 
 a {
-  color: #00b7ff;
+  color: #02544b;
 }
 
 /*# sourceMappingURL=style.css.map */

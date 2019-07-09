@@ -1,33 +1,38 @@
-<form action="/auth/signup" method="POST" id="form-container">
+<div class="header">
 
-  <dev class="signup-container">
-    <h2>Signup</h2>
-    <label for="firstname"></label>
-    <input id="firstname" type="text" name="firstName" placeholder="First name">
-    <label for="lastname"></label>
-    <input id="lastname" type="text" name="lastName" placeholder="Last name">
-    <label for="email"></label>
-    <input id="email" type="email" name="email" placeholder="Email Addresse">
-    <label for="password"></label>
-    <input id="password" type="password" name="password" placeholder="Your password">
-    <button>Create account</button>
+  <form action="/auth/signup" method="POST" id="form-container">
 
-  </dev>
+    <div class="signup-container">
+      <h2>Your Pet is lost?</h2>
+      <div class="slogan">With Pet tracker it's super simple to locate your pet via GPS on the map!</div>
+      <label for="firstname"></label>
+      <input id="firstname" type="text" name="firstName" placeholder="First name">
+      <label for="lastname"></label>
+      <input id="lastname" type="text" name="lastName" placeholder="Last name">
+      <label for="email"></label>
+      <input id="email" type="email" name="email" placeholder="Email Addresse">
+      <label for="password"></label>
+      <input id="password" type="password" name="password" placeholder="Your password">
+      <button>Create account</button>
+      <p class="account-message">
+        Do you already have an account?
+        <a href="/auth/login">Login</a>
+      </p>
 
-  <br><br>
+    </div>
 
-
-  <br>
-  {{#if message }}
-  <div class="error-message">{{ message }}</div>
-  {{/if}}
-
-  <br><br>
-
+    <br><br>
 
 
-  <p class="account-message">
-    Do you already have an account?
-    <a href="/auth/login">Login</a>
-  </p>
-</form>
+    <br>
+    {{#if message }}
+    <div class="error-message">{{ message }}</div>
+    {{/if}}
+
+    <br><br>
+
+
+
+
+  </form>
+</div>
