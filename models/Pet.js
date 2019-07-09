@@ -15,7 +15,10 @@ const petSchema = new Schema({
     enum: ["yes", "no"],
     type: String
   },
-  chipId: Number
+  chipId: Number,
+  gpsArray: {
+    type: Array
+  }
 });
 
 const Pet = mongoose.model("Pet", petSchema);

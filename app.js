@@ -93,4 +93,7 @@ app.use("/pet-registration", profile);
 const map = require("./routes/map");
 app.use("/map", map);
 
+const testmap = require("./routes/testmap");
+app.use("/testmap", testmap);
+
 module.exports = app;
