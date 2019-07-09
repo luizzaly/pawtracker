@@ -13,11 +13,14 @@ router.get("/", passport.authenticate("local", {
 }));*/
 
 router.get("/", (req, res, next) => {
+  if (!req.isAuthenticated()) return res.redirect("/auth/login");
+
   res.render("auth/pet-registration");
 });
 
 router.post("/", (req, res, next) => {
-  if (!req.isAuthenticated()) return res.redirect("/login");
+  console.log(req.isAuthenticated());
+  if (!req.isAuthenticated()) return res.redirect("/auth/login");
 
   const { animal, petname, sex, neutered, chipId } = req.body;
   Pet.create({ animal, petname, sex, neutered, chipId }).then(pet => {
@@ -28,7 +31,7 @@ router.post("/", (req, res, next) => {
         res.redirect("/map");
       })
       .catch(err => {
-        res.render("error", { message: "Something went wrong" });
+        res.render("error", { message: "Something went wrong", err });
       });
   });
 });
