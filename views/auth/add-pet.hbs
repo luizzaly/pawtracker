@@ -1,0 +1,23 @@
+<form action="/add-pet" method="POST" id="form-container">
+  <div class="login-container">
+    <h3>Add a pet</h3>
+    <label for="animal">What's your pet?</label>
+    <select name="animal">
+      <option value="cat">Cat</option>
+      <option value="dog">Dog</option>
+      <option value="other">Other</option>
+    </select>
+    <label for="petname">What's the name of your pet?</label>
+    <input id="petname" type="text" name="petname" placeholder="Pet's name">
+    <label for="sex">Pet's gender?</label>
+    <input id="sex" type="text" name="sex" placeholder="Pet's sex">
+    <label for="neutered">Is your pet neuterd?</label>
+    <select name="neutered">
+      <option value="yes">Yes</option>
+      <option value="no">No</option>
+    </select>
+    <label for="chipId">What's it's Chip-Id?</label>
+    <input id="chipId" type="number" name="chipId" placeholder="Enter Chip-Id">
+  </div>
+  <button>Save Pet</button>
+</form>

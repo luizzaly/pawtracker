@@ -17,3 +17,14 @@
   font-size: 30px;
   color: #03554b;
 }
+
+nav {
+  height: 6%;
+  background-color: white;
+  z-index: 30000;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  position: fixed;
+  width: 100%;
+}

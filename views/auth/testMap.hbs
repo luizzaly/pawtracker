@@ -31,8 +31,8 @@
     function fakeApiRequest() {
       const defaultLat = 52.473589
       const defaultLong = 13.402702
-      const dif1 = Math.random() / 90 - 0.008
-      const dif2 = Math.random() / 90 - 0.008
+      const dif1 = Math.random() / 90 - 0.009
+      const dif2 = Math.random() / 90 - 0.009
       return [
         defaultLong + dif2,
         defaultLat + dif1,
@@ -118,8 +118,9 @@
           map.getSource('trace').setData(data);
           map.panTo(coOrd);
           i++;
-          console.log(coOrd)
+          
         }, 4000);
+        
       });
     });
   </script>
