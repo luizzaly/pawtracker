@@ -109,7 +109,7 @@ select:-webkit-autofill:focus {
   transition: background-color 5000s ease-in-out 0s;
 }
 
-button {
+button.green-btn {
   width: 40%;
   padding: 13px;
   border-radius: 100px;
@@ -122,12 +122,12 @@ button {
   margin-left: -20%;
   font-size: 19px;
 }
-button:focus {
+button.green-btn:focus {
   outline: none;
 }
 
 @media only screen and (max-width: 550px) {
-  button {
+  button.green-btn {
     width: 80% !important;
     margin-left: -40% !important;
     font-size: 16px;
@@ -137,7 +137,7 @@ button:focus {
 }
 
 @media only screen and (max-width: 971px) {
-  button {
+  button.green-btn {
     width: 40%;
     left: 50%;
     width: -20%;

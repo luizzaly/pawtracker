@@ -4,7 +4,7 @@
     <label for="email"></label>
     <input id="email" type="email" name="email" placeholder="Email Addresse" value="{{user.email}}">
     <label for="password"></label>
-    <input id="password" type="password" name="password" placeholder="Your password">
+    <input id="password" type="password" name="password" placeholder="Your password" value="{{user.password}}">
 
     <h3>Your Pets</h3>
     {{#each user.pets}}
@@ -21,7 +21,8 @@
     <input id="chipId-{{@index}}" type="number" name="chipId" placeholder="Enter Chip-Id" value="{{chipId}}">
     {{/each}}
 
-    <button type="submit">Save</button>
+    <button id="profile-save" onclick="savePet()" type="submit">Save</button>
+
 
   </div>
 

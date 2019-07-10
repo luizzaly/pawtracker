@@ -13,7 +13,7 @@
       <label for="password"></label>
       <input id="password" type="password" name="password" placeholder="Your password">
 
-      <button>Login</button>
+      <button class="green-btn">Login</button>
       <p class="account-message">
         Don't have an account yet?
         <a href="/auth/signup">Signup</a>
@@ -22,7 +22,7 @@
     </div>
     <br>
     {{#if message }}
-    <div class="error-message">{{ message }}</div>
+    <div class="error-message" style="color: aliceblue">{{ message }}</div>
     {{/if}}
 
     <br><br>

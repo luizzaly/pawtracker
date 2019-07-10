@@ -3,8 +3,10 @@ const passport = require("passport");
 const router = express.Router();
 const User = require("../models/User");
 const Pet = require("../models/Pet");
+const bcrypt = require("bcrypt");
 
 router.get("/", (req, res, next) => {
+  if (!req.isAuthenticated()) return res.redirect("/auth/login");
   User.findById(req.user._id)
     .populate("pets")
     .then(user => {
@@ -16,17 +18,41 @@ router.get("/", (req, res, next) => {
 });
 
 router.post("/:userId", (req, res, next) => {
+  if (!req.isAuthenticated()) return res.redirect("/auth/login");
   console.log("BODY: ", req.body);
-  // user has an array of pet ids in the pets field
-  // loop over the ids
-  // update the pets with these ids with the new
-  Pets.findByIdAndUpdate();
-  User.findByIdAndUpdate(req.params.userId)
-    .then(user => {
-      user.forEach(pet, i => {
-        pet[i];
+  const { petname, sex, neutered, chipId, password, email } = req.body;
+
+  const salt = bcrypt.genSaltSync();
+  const hashPass = bcrypt.hashSync(password, salt);
+
+  User.findByIdAndUpdate(
+    req.params.userId,
+    {
+      email: email,
+      password: hashPass
+    },
+    { new: true }
+  )
+    .then(updatedUser => {
+      console.log("updated user/////////", updatedUser);
+      console.log("pet: ", updatedUser.pets[0]);
+      updatedUser.pets.forEach((pet, index) => {
+        Pet.findByIdAndUpdate(
+          { _id: pet },
+          {
+            petname: petname,
+            sex: sex,
+            neutered: neutered,
+            chipId: chipId
+          },
+          { new: true }
+        )
+          .then(updatedPet => {
+            console.log("updated pet aus dem foreach loop", updatedPet);
+          })
+          .catch(err => console.log("Hier error beim pet updaten", err));
       });
-      res.render("auth/profile", { user: req.user });
+      res.redirect("/profile");
     })
     .catch(err => {
       console.log("Error", err);
