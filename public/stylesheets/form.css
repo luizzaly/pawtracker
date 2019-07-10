@@ -1,14 +1,78 @@
+.login-container {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  width: 30%;
+  background-color: #ffffff;
+  padding: 30px;
+  position: absolute;
+  top: 10%;
+  left: 5%;
+  height: 70vh;
+  border-radius: 5px;
+}
 .signup-container {
   display: flex;
   flex-direction: column;
   margin: 0 auto;
-  width: 70%;
+  width: 30%;
+  background-color: #ffffff;
+  padding: 30px;
+  position: absolute;
+  top: 10%;
+  left: 5%;
+  height: 75vh;
+  border-radius: 5px;
 }
 
+.login-container h2 {
+  font-family: "Lato", sans-serif;
+  margin-left: 20px;
+  margin-right: 20px;
+  font-size: 35px;
+  color: #484848;
+}
 .signup-container h2 {
-  font-family: "Days One", sans-serif;
-  margin: 0 auto;
+  font-family: "Lato", sans-serif;
+  margin-left: 20px;
+  margin-right: 20px;
+  font-size: 35px;
+  color: #484848;
+}
+
+h3 {
+  margin-left: 20px;
+  color: #111111;
+  font-size: 20px;
+}
+
+.slogan {
+  margin-top: -20px;
+  margin-left: 20px;
+  margin-right: 20px;
+  font-size: 19px;
+  color: #484848;
+  margin-bottom: 10%;
+}
+
+label {
+  margin-left: 20px;
+  font-size: 20px;
+  color: #484848;
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+select {
+  margin-left: 20px;
+  font-size: 16px;
+  border: 1px solid;
   margin-bottom: 20px;
+  margin-right: 20px;
+}
+
+.button.profile-button {
+  margin-bottom: -40px;
 }
 
 input {
@@ -17,6 +81,8 @@ input {
   margin-bottom: 30px;
   padding-bottom: 10px;
   font-size: 16px !important;
+  margin-left: 20px;
+  margin-right: 20px;
 }
 
 input::placeholder {
@@ -39,19 +105,101 @@ select:-webkit-autofill,
 select:-webkit-autofill:hover,
 select:-webkit-autofill:focus {
   -webkit-text-fill-color: #484848;
-  -webkit-box-shadow: 0 0 0px 1000px #e3fbe9 inset;
+  -webkit-box-shadow: 0 0 0px 1000px #ededed inset;
   transition: background-color 5000s ease-in-out 0s;
 }
 
 button {
   width: 40%;
-  margin: 0 auto;
-  padding: 8px;
+  padding: 13px;
   border-radius: 100px;
   background-color: #03554b;
   border: none;
   color: white;
+  position: absolute;
+  bottom: 10%;
+  left: 50%;
+  margin-left: -20%;
+  font-size: 19px;
 }
 button:focus {
   outline: none;
+}
+
+@media only screen and (max-width: 550px) {
+  button {
+    width: 80% !important;
+    margin-left: -40% !important;
+    font-size: 16px;
+    padding: 16px;
+    bottom: 27px;
+  }
+}
+
+@media only screen and (max-width: 971px) {
+  button {
+    width: 40%;
+    left: 50%;
+    width: -20%;
+    margin-left: -20%;
+  }
+}
+
+.account-message {
+  margin: 0 auto;
+  font-size: 16px;
+  color: #484848;
+  margin-bottom: 16px;
+}
+
+@media only screen and (max-width: 1100px) {
+  .login-container {
+    width: 40%;
+  }
+}
+
+@media only screen and (max-width: 550px) {
+  .login-container {
+    width: 380px;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    background-color: #ffffff;
+    padding: 0;
+    position: none;
+
+    border-radius: 5px;
+  }
+}
+
+@media only screen and (max-width: 1100px) {
+  .signup-container {
+    width: 40%;
+  }
+}
+
+@media only screen and (max-width: 550px) {
+  .signup-container {
+    width: 380px;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    background-color: #ffffff;
+    padding: 0;
+    position: none;
+
+    border-radius: 5px;
+  }
+}
+
+.header {
+  width: 100vw;
+  height: 100vh;
+  background-image: url("../images/krista-mangulsone-9gz3wfHr65U-unsplash.jpg");
+  background-size: cover;
+  background-position: left;
+}
+
+.profile-button {
+  margin: 0 auto;
 }

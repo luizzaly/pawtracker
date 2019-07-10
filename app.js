@@ -87,13 +87,13 @@ app.use("/", index);
 const authRoutes = require("./routes/auth");
 app.use("/auth", authRoutes);
 
-const profile = require("./routes/pet-registration");
-app.use("/pet-registration", profile);
+const petReg = require("./routes/pet-registration");
+app.use("/pet-registration", petReg);
 
 const map = require("./routes/map");
 app.use("/map", map);
 
-const testmap = require("./routes/testmap");
-app.use("/testmap", testmap);
+const profile = require("./routes/profile");
+app.use("/profile", profile);
 
 module.exports = app;
