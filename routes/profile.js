@@ -58,5 +58,4 @@ router.post("/:userId", (req, res, next) => {
       console.log("Error", err);
     });
 });
-
 module.exports = router;
