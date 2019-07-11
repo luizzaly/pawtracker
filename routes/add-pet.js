@@ -17,6 +17,11 @@ router.get("/", (req, res, next) => {
 
   res.render("auth/add-pet");
 });
+//GPS passway map.hbs -> databse
+router.post("/api/coordinates", (req, res, next) => {
+  console.log(req.body);
+  // req.body.gpsArray = data;
+});
 
 router.post("/", (req, res, next) => {
   console.log(req.isAuthenticated());

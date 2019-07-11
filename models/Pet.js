@@ -16,8 +16,10 @@ const petSchema = new Schema({
     type: String
   },
   chipId: Number,
+  defaultLong: Number,
+  defaultLat: Number,
   gpsArray: {
-    type: Array
+    type: []
   }
 });
 

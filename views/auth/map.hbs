@@ -7,6 +7,7 @@
   <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
   <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v1.1.0/mapbox-gl.js'></script>
   <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v1.1.0/mapbox-gl.css' rel='stylesheet' />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.0/axios.min.js"></script>
   <style>
     body {
       margin: 0;
@@ -38,6 +39,7 @@
         defaultLat + dif1,
       ]
     }
+
     mapboxgl.accessToken = 'pk.eyJ1IjoibHVpenphbHkiLCJhIjoiY2p4dW5rdnRjMDJ5czNnbXk5cG9iMzdzciJ9.O1BubhULe8xO8cypdGAtCQ';
     var map = new mapboxgl.Map({
       container: 'map',
@@ -93,32 +95,31 @@
         map.addLayer({
           "id": "point",
           "source": "point",
-          "type": "symbol",
-          "layout": {
-            "icon-image": "airport-15",
-            "icon-rotate": ["get", "bearing"],
-            "icon-rotation-alignment": "map",
-            "icon-allow-overlap": true,
-            "icon-ignore-placement": true
+          "type": "circle",
+          "paint": {
+            "circle-radius": 10,
+            "circle-color": "#007cbf"
           }
-        })
+        });
 
 
         // setup the viewport
-        map.jumpTo({ 'center': fakeApiRequest(), 'zoom': 14 });
+        map.jumpTo({ 'center': fakeApiRequest(), 'zoom': 17 });
         map.setPitch(30);
 
         // on a regular basis, add more coordinates from the saved list and update the map
         var i = 0;
         var timer = window.setInterval(function () {
-          const coOrd = fakeApiRequest()
-          data.features[0].geometry.coordinates.push(coOrd);
-          point.features[0].geometry.coordinates = [coOrd]
+          const coord = fakeApiRequest()
+
+          data.features[0].geometry.coordinates.push(coord);
+          point.features[0].geometry.coordinates = [coord]
           map.getSource('point').setData(point)
           map.getSource('trace').setData(data);
-          map.panTo(coOrd);
+          map.panTo(coord);
           i++;
-          coOrd.push()
+          axios.post("http://localhost:3005/api/coordinates", { coord })
+          console.log('bla', coord)
         }, 4000);
       });
     });
