@@ -97,6 +97,6 @@ const profile = require("./routes/profile");
 app.use("/profile", profile);
 
 const addPet = require("./routes/add-pet");
-app.use("/", addPet);
+app.use("/add-pet", addPet);
 
 module.exports = app;
