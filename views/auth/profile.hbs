@@ -1,5 +1,5 @@
 <nav>
-  <a href="/map"> <img class="logo" src="/images/ptracker.png" alt=""></a>
+  <a href="/map"> <img class="logo" src="/images/ptracker-white.png" alt=""></a>
   <a href="/auth/logout"><i class="fas fa-sign-out-alt"></i></a>
 </nav>
 
@@ -9,7 +9,7 @@
     <label for="email"></label>
     <input id="email" type="email" name="email" placeholder="Email Addresse" value="{{user.email}}">
     <label for="password"></label>
-    <input id="password" type="password" name="password" placeholder="Your password">
+    <input id="password" type="password" name="password" placeholder="Change your password here">
 
     <h3>Your Pets</h3>
     {{#each user.pets}}
@@ -48,7 +48,9 @@
 
 </form>
 <div class="navigation-container">
-  <a href="/profile"><i class="fas fa-user"></i> </a>
-  <a href="/profile"><i class="fas fa-plus"></i></a>
+  <a href="/add-pet"><i class="fas fa-plus"></i></a>
   <a href="/map"><i class="fas fa-map-marker-alt"></i></a>
+  <a href="/profile"><i class="fas fa-user"></i> </a>
+
+
 </div>

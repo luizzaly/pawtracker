@@ -18,12 +18,17 @@
   color: #03554b;
 }
 
+.fas.fa-sign-out-alt {
+  color: #ffff;
+  margin-right: 20px;
+}
+
 nav {
   height: 50px;
-  background-color: white;
+  background-color: #03554c;
   z-index: 30000;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
   align-items: center;
   position: fixed;
   top: 0;
@@ -33,10 +38,41 @@ nav {
 
 .logo {
   width: 50%;
+  margin-left: 20px;
 }
 
 .logo-white {
-  width: 40%;
-  margin-top: 10px;
-  margin-left: 13px;
+  width: 10%;
+  margin-top: 30px;
+}
+
+@media only screen and (max-width: 1040px) {
+  .logo-white {
+    width: 15%;
+    margin-top: 15px;
+  }
+}
+
+@media only screen and (max-width: 550px) {
+  .logo-white {
+    width: 40%;
+    margin-top: 10px;
+    margin-left: 13px;
+  }
+}
+
+.logo-container {
+  margin-left: 65px;
+}
+
+@media only screen and (max-width: 890px) {
+  .logo-container {
+    margin-left: 42px;
+  }
+}
+
+@media only screen and (max-width: 550px) {
+  .logo-container {
+    margin-left: 0px;
+  }
 }

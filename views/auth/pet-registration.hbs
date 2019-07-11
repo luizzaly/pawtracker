@@ -1,37 +1,43 @@
 <nav>
-  <a href="/map"> <img class="logo" src="/images/ptracker.png" alt=""></a>
+  <a href="/map"> <img class="logo" src="/images/ptracker-white.png" alt=""></a>
   <a href="/auth/logout"><i class="fas fa-sign-out-alt"></i></a>
 </nav>
 
-<h1>Register your animal</h1>
+
 <form action="/pet-registration" method="POST" id="form-container">
-  <label for="animal">What's your pet?</label>
-  <select name="animal">
-    <option value="cat">Cat</option>
-    <option value="dog">Dog</option>
-    <option value="other">Other</option>
-  </select>
-  <label for="petname">What's your pets name?</label>
-  <input id="petname" type="text" name="petname" placeholder="Pet's name">
+  <div class="login-container">
+    <h3>Register your animal</h3>
+    <label for="animal">What's your pet?</label>
+    <select name="animal">
+      <option value="cat">Cat</option>
+      <option value="dog">Dog</option>
+      <option value="other">Other</option>
+    </select>
+    <label for="petname">What's your pets name?</label>
+    <input id="petname" type="text" name="petname" placeholder="Pet's name">
 
-  <label for="sex">Pet's sex?</label>
-  <select name="sex">
-    <option value="female">female</option>
-    <option value="male">male</option>
-  </select>
+    <label for="sex">Pet's sex?</label>
+    <select name="sex">
+      <option value="female">female</option>
+      <option value="male">male</option>
+    </select>
 
-  <label for="neutered">Is your pet neuterd?</label>
-  <select name="neutered">
-    <option value="yes">Yes</option>
-    <option value="no">No</option>
-  </select>
-  <label for="chipId">What's the Chip-Id?</label>
-  <input id="chipId" type="number" name="chipId" placeholder="Enter Chip-Id">
-  <button>Save Pet</button>
+    <label for="neutered">Is your pet neuterd?</label>
+    <select name="neutered">
+      <option value="yes">Yes</option>
+      <option value="no">No</option>
+    </select>
+    <label for="chipId">What's the Chip-Id?</label>
+    <input id="chipId" type="number" name="chipId" placeholder="Enter Chip-Id">
+    <button id="profile-save">Save Pet</button>
+  </div>
+
 </form>
 
 <div class="navigation-container">
-  <a href="/profile"><i class="fas fa-user"></i> </a>
-  <a href="/profile"><i class="fas fa-plus"></i></a>
+  <a href="/add-pet"><i class="fas fa-plus"></i></a>
   <a href="/map"><i class="fas fa-map-marker-alt"></i></a>
+  <a href="/profile"><i class="fas fa-user"></i> </a>
+
+
 </div>
