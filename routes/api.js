@@ -9,6 +9,10 @@ const User = require("../models/User");
 //   req.body.gpsArray = data;
 // });
 
+// window.setInterval(async () => {
+//   const result = await fakeApiRequest()
+// }, 100)
+
 User.findById(req.user._id).then(user => {
   let petsArray = user.pets.map(objId => {
     Pet.findById(objId)
@@ -38,6 +42,5 @@ var timer = window.setInterval(function() {
   map.getSource("trace").setData(data);
   map.panTo(coord);
   i++;
-  axios.post("http://localhost:3005/api/coordinates", { coord });
   console.log("bla", coord);
 }, 4000);
