@@ -35,7 +35,8 @@
       const dif2 = Math.random() / 90 - 0.008
       return [
         defaultLong + dif2,
-        defaultLat + dif1,
+        defaultLat + dif1
+        
       ]
     }
     mapboxgl.accessToken = 'pk.eyJ1IjoibHVpenphbHkiLCJhIjoiY2p4dW5rdnRjMDJ5czNnbXk5cG9iMzdzciJ9.O1BubhULe8xO8cypdGAtCQ';
@@ -117,8 +118,8 @@
           map.getSource('point').setData(point)
           map.getSource('trace').setData(data);
           map.panTo(coOrd);
+
           i++;
-          console.log(coOrd)
         }, 4000);
       });
     });
