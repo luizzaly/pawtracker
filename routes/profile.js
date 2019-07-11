@@ -37,21 +37,27 @@ router.post("/:userId", (req, res, next) => {
       console.log("updated user/////////", updatedUser);
       console.log("pet: ", updatedUser.pets[0]);
       updatedUser.pets.forEach((pet, index) => {
-        Pet.findByIdAndUpdate(
-          { _id: pet },
-          {
-            petname: petname,
-            sex: sex,
-            neutered: neutered,
-            chipId: chipId
-          },
-          { new: true }
-        )
+        const petInfo = {
+          petname: petname,
+          chipId: chipId
+        };
+        console.log(sex, neutered);
+
+        if (sex) {
+          petInfo.sex = sex;
+        }
+        if (neutered) {
+          petInfo.neutered = neutered;
+        }
+
+        Pet.findByIdAndUpdate({ _id: pet }, petInfo, { new: true })
+
           .then(updatedPet => {
             console.log("updated pet aus dem foreach loop", updatedPet);
           })
           .catch(err => console.log("Hier error beim pet updaten", err));
       });
+
       res.redirect("/profile");
     })
     .catch(err => {

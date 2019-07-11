@@ -18,7 +18,9 @@ mongoose.set("useFindAndModify", false);
 mongoose.set("useCreateIndex", true);
 
 mongoose
-  .connect("mongodb://localhost/pawtracker", { useNewUrlParser: true })
+  .connect(process.env.MONGODB_URI || "mongodb://localhost/pawtracker", {
+    useNewUrlParser: true
+  })
   .then(x => {
     console.log(
       `Connected to Mongo! Database name: "${x.connections[0].name}"`

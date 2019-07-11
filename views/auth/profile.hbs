@@ -18,17 +18,21 @@
     <input id="petname-{{@index}}" type="text" name="petname" placeholder="Pet's name" value="{{petname}}">
 
 
-    <label for="sex-{{@index}}">Pet's sex?</label>
+    <label for="sex-{{@index}}">Pet's gender?</label>
 
 
-
+    <p class="selection">{{sex}} <i class="fas fa-check"></i></p>
     <select id="sex-{{@index}}" name="sex" value="{{sex}}">
+      <option value="" selected disabled hidden>Change here</option>
       <option value="female">female</option>
       <option value="male">male</option>
     </select>
 
+
     <label for="neutered-{{@index}}">Is your pet neuterd?</label>
+    <p class="selection">{{neutered}} <i class="fas fa-check"></i></p>
     <select id="neutered-{{@index}}" name="neutered" value="{{neutered}}">
+      <option value="" selected disabled hidden>Change here</option>
       <option value="yes">Yes</option>
       <option value="no">No</option>
     </select>
