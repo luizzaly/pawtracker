@@ -10,12 +10,17 @@
   z-index: 3000;
   background-color: white;
 
-  box-shadow: 0px -2px 12px #b0b0b0;
+  box-shadow: 0px -2px 12px #ededed;
 }
 
 .fas {
   font-size: 30px;
   color: #03554b;
+}
+.fas:active,
+:hover,
+:focus {
+  color: #608e85;
 }
 
 .fas.fa-sign-out-alt {

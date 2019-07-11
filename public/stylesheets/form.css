@@ -6,10 +6,14 @@
   background-color: #ffffff;
   padding: 30px;
   position: absolute;
-  top: 7%;
+  top: 10%;
   left: 5%;
   height: 70vh;
   border-radius: 5px;
+}
+
+.login-container.shadow {
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.12);
 }
 .signup-container {
   display: flex;
@@ -23,6 +27,7 @@
   left: 5%;
   height: 75vh;
   border-radius: 5px;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.12);
 }
 
 .login-container h2 {
@@ -131,7 +136,8 @@ button.green-btn:focus {
 }
 
 button.green-btn:hover {
-  background-color: #608e85;
+  background-color: rgba(3, 85, 76, 0.95);
+  color: #ffff;
 }
 
 button {
@@ -146,7 +152,8 @@ button {
 }
 
 button:hover {
-  background-color: #608e85;
+  background-color: rgba(3, 85, 76, 0.95);
+  color: #ffff;
 }
 
 @media only screen and (max-width: 550px) {
@@ -156,6 +163,7 @@ button:hover {
     font-size: 16px;
     padding: 16px;
     bottom: 27px;
+    padding: 16px 8px;
   }
 }
 
