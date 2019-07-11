@@ -25,14 +25,14 @@ router.post("/:userId", (req, res, next) => {
   const salt = bcrypt.genSaltSync();
   const hashPass = bcrypt.hashSync(password, salt);
 
-  User.findByIdAndUpdate(
-    req.params.userId,
-    {
-      email: email,
-      password: hashPass
-    },
-    { new: true }
-  )
+  const query = {
+    email: email
+  };
+  if (req.body.password !== "") {
+    query.password = hashPass;
+  }
+
+  User.findByIdAndUpdate(req.params.userId, query, { new: true })
     .then(updatedUser => {
       console.log("updated user/////////", updatedUser);
       console.log("pet: ", updatedUser.pets[0]);

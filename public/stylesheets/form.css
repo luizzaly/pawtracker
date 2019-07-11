@@ -26,18 +26,18 @@
 }
 
 .login-container h2 {
-  font-family: "Lato", sans-serif;
+  font-family: "Asap", sans-serif;
   margin-left: 20px;
   margin-right: 20px;
   font-size: 35px;
-  color: #484848;
+  color: #5a5a5a;
 }
 .signup-container h2 {
-  font-family: "Lato", sans-serif;
+  font-family: "Asap", sans-serif;
   margin-left: 20px;
   margin-right: 20px;
   font-size: 35px;
-  color: #484848;
+  color: #5a5a5a;
 }
 
 h3 {
@@ -51,15 +51,15 @@ h3 {
   margin-left: 20px;
   margin-right: 20px;
   font-size: 19px;
-  color: #484848;
+  color: #5a5a5a;
   margin-bottom: 10%;
 }
 
 label {
   margin-left: 20px;
   font-size: 20px;
-  color: #484848;
-  font-weight: 600;
+  color: #5a5a5a;
+  font-weight: 300;
   margin-bottom: 5px;
 }
 
@@ -69,6 +69,9 @@ select {
   border: 1px solid;
   margin-bottom: 20px;
   margin-right: 20px;
+  border: none;
+  background-color: #ededed;
+  padding: 10px 0px;
 }
 
 .button.profile-button {
@@ -80,13 +83,14 @@ input {
   border-bottom: 1px solid grey;
   margin-bottom: 30px;
   padding-bottom: 10px;
-  font-size: 16px !important;
+  font-size: 20px !important;
   margin-left: 20px;
   margin-right: 20px;
+  padding-top: 10px;
 }
 
 input::placeholder {
-  color: #484848;
+  color: #5a5a5a;
   font-size: 16px;
   font-weight: 400;
   padding-bottom: 20px;
@@ -104,7 +108,7 @@ textarea:-webkit-autofill:focus,
 select:-webkit-autofill,
 select:-webkit-autofill:hover,
 select:-webkit-autofill:focus {
-  -webkit-text-fill-color: #484848;
+  -webkit-text-fill-color: #5a5a5a;
   -webkit-box-shadow: 0 0 0px 1000px #ededed inset;
   transition: background-color 5000s ease-in-out 0s;
 }
@@ -113,7 +117,7 @@ button.green-btn {
   width: 40%;
   padding: 13px;
   border-radius: 100px;
-  background-color: #03554b;
+  background-color: #03554c;
   border: none;
   color: white;
   position: absolute;
@@ -124,6 +128,25 @@ button.green-btn {
 }
 button.green-btn:focus {
   outline: none;
+}
+
+button.green-btn:hover {
+  background-color: #608e85;
+}
+
+button {
+  background-color: #03554c;
+  border: none;
+  border-radius: 100px;
+  padding: 16px 8px;
+  width: 40%;
+  font-size: 19px;
+  margin: 0 auto;
+  color: white;
+}
+
+button:hover {
+  background-color: #608e85;
 }
 
 @media only screen and (max-width: 550px) {
@@ -202,4 +225,18 @@ button.green-btn:focus {
 
 .profile-button {
   margin: 0 auto;
+}
+
+#profile-save {
+  margin-bottom: 100px;
+  outline: none;
+}
+
+.petname {
+  color: #03554c;
+}
+
+.fas.fa-paw {
+  font-size: 20px;
+  margin-right: 5px;
 }

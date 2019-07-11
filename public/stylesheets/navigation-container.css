@@ -10,7 +10,7 @@
   z-index: 3000;
   background-color: white;
 
-  box-shadow: 0px -2px 6px lightgray;
+  box-shadow: 0px -2px 12px #b0b0b0;
 }
 
 .fas {
@@ -19,12 +19,24 @@
 }
 
 nav {
-  height: 6%;
+  height: 50px;
   background-color: white;
   z-index: 30000;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
   position: fixed;
+  top: 0;
   width: 100%;
+  box-shadow: 0px 4px 10px #b0b0b0;
+}
+
+.logo {
+  width: 50%;
+}
+
+.logo-white {
+  width: 40%;
+  margin-top: 10px;
+  margin-left: 13px;
 }

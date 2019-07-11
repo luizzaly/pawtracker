@@ -1,27 +1,45 @@
+<nav>
+  <a href="/map"> <img class="logo" src="/images/ptracker.png" alt=""></a>
+  <a href="/auth/logout"><i class="fas fa-sign-out-alt"></i></a>
+</nav>
+
 <form action="/profile/{{user._id}}" method="POST" id="form-container">
   <div class="login-container">
     <h3>Your Account Details</h3>
     <label for="email"></label>
     <input id="email" type="email" name="email" placeholder="Email Addresse" value="{{user.email}}">
     <label for="password"></label>
-    <input id="password" type="password" name="password" placeholder="********" value="{{user.password}}">
+    <input id="password" type="password" name="password" placeholder="Your password">
 
     <h3>Your Pets</h3>
     {{#each user.pets}}
+    <h3 class="petname"><i class="fas fa-paw"></i>{{petname}}</h3>
     <label for="petname-{{@index}}">What's your pets name?</label>
     <input id="petname-{{@index}}" type="text" name="petname" placeholder="Pet's name" value="{{petname}}">
+
+
     <label for="sex-{{@index}}">Pet's sex?</label>
-    <input id="sex-{{@index}}" type="text" name="sex" placeholder="Pet's sex" value="{{sex}}">
+
+
+
+    <select id="sex-{{@index}}" name="sex" value="{{sex}}">
+      <option value="female">female</option>
+      <option value="male">male</option>
+    </select>
+
     <label for="neutered-{{@index}}">Is your pet neuterd?</label>
     <select id="neutered-{{@index}}" name="neutered" value="{{neutered}}">
       <option value="yes">Yes</option>
       <option value="no">No</option>
     </select>
+
+
     <label for="chipId-{{@index}}">What's the Chip-Id?</label>
     <input id="chipId-{{@index}}" type="number" name="chipId" placeholder="Enter Chip-Id" value="{{chipId}}">
-    {{/each}}
 
+    {{/each}}
     <button id="profile-save" onclick="savePet()" type="submit">Save</button>
+
 
 
   </div>
@@ -29,3 +47,8 @@
 
 
 </form>
+<div class="navigation-container">
+  <a href="/profile"><i class="fas fa-user"></i> </a>
+  <a href="/profile"><i class="fas fa-plus"></i></a>
+  <a href="/map"><i class="fas fa-map-marker-alt"></i></a>
+</div>

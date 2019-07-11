@@ -1,3 +1,8 @@
+<nav>
+  <a href="/map"> <img class="logo" src="/images/ptracker.png" alt=""></a>
+  <a href="/auth/logout"><i class="fas fa-sign-out-alt"></i></a>
+</nav>
+
 <form action="/add-pet" method="POST" id="form-container">
   <div class="login-container">
     <h3>Add a pet</h3>
@@ -18,6 +23,12 @@
     </select>
     <label for="chipId">What's it's Chip-Id?</label>
     <input id="chipId" type="number" name="chipId" placeholder="Enter Chip-Id">
+    <button>Save Pet</button>
   </div>
-  <button>Save Pet</button>
+
 </form>
+<div class="navigation-container">
+  <a href="/profile"><i class="fas fa-user"></i> </a>
+  <a href="/profile"><i class="fas fa-plus"></i></a>
+  <a href="/map"><i class="fas fa-map-marker-alt"></i></a>
+</div>
